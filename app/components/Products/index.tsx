@@ -64,7 +64,6 @@ const Products = (props: ProductDataProps) => {
       <div className="mt-12 lg:mt-24">
         <div className="flex flex-wrap gap-6">
           {cardData?.map((item) => {
-            console.log(item, "itemm");
             return (
               <button
                 key={item?.id}
