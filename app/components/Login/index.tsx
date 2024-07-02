@@ -6,7 +6,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event:any) => {
     event.preventDefault();
     if (!email.trim() || !password.trim()) {
       setError('Please enter both email and password.');

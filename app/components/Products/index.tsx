@@ -4,13 +4,14 @@ import { useState } from "react";
 import rightArrow from "../../../public/Images/right-arrow.png";
 import buttonImage from "../../../public/Images/icon_png.png";
 import { NextImageSrc } from "@/types/common";
+
 type ProductDataProps = {
   data: {
     title: string;
     subtitle: string;
     description: string;
     cardData: CardData[];
-    imageSrc: NextImageSrc;
+    imageSrc?: any;
   };
 };
 
@@ -18,7 +19,7 @@ type CardData = {
   id: string;
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: any;
 };
 
 const Products = (props: ProductDataProps) => {
@@ -29,7 +30,6 @@ const Products = (props: ProductDataProps) => {
 
   const handleButtonClick = (card: CardData) => {
     setSelectedCard(card);
-    console.log(card, "card");
   };
 
   const handlePrevious = () => {
