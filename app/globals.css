@@ -2,32 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.heroSection {
+  background-image: url("../public/Images/Hero_section.png");
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  cursor: pointer;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.hamburger > div {
+  width: 1.4375rem;
+  height: 0.1875rem;
+  background-color: #fff;
+}
+
+.hamburger.active div:nth-child(1) {
+  transform: rotate(-47deg) translate(-0.4375rem, 0.4375rem);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(46deg) translate(-0.25rem, -0.3125rem);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.footer {
+  background-image: url("../public/Images/Footer.png");
 }
